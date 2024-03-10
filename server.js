@@ -17,11 +17,12 @@ const app = express()
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'dpg-cnmql88l6cac73fdbaug-a',
+      connectionString : process.env.DATABASE_URL,
+      host : process.env.DATABASE_HOST,
       port : 5432,
-      user : 'image_recog_db_user',
-      password : 'YGc0Ri99K3b34U5ftkb47flzoDuRAvSj',
-      database : 'image_recog_db'
+      user : process.env.DATABASE_USER,
+      password : process.env.DATABASE_PW,
+      database : process.env.DATABASE_DB
     }
   });
 
